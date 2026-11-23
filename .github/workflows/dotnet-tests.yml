@@ -1,0 +1,23 @@
+
+name: Hospital Management Tests
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Run unit tests
+        run: dotnet test Question1_HospitalManagement/HospitalManagement.Tests/HospitalManagement.Tests.csproj --configuration Release
