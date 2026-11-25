@@ -5,3 +5,11 @@
 **/TestResults/
 *.user
 *.suo
+
+# Python files
+__pycache__/
+*.pyc
+.venv/
+
+# Database credentials
+.env
